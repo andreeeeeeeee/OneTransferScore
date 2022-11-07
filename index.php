@@ -10,7 +10,7 @@
     <?php
         $db = new SQLite3("banco.db");
         $db->exec("PRAGMA foreign_keys = ON");
-        // codigo vai aqui
+        "<img src=".">";
         $db->close();
     ?>
 </body>
