@@ -7,6 +7,16 @@ PRIMARY KEY (id)
 );
 INSERT INTO clubes VALUES (1, 'Internacional', 81), (2, 'Palmeiras', 73), (3, 'Fluminense', 70), (4, 'Corinthians', 65), (5, 'Flamengo',62), (6, 'Athletico-PR', 58), (7, 'Atlético-MG', 58), (8, 'Fortaleza', 55), (9, 'São Paulo', 54), (10, 'América-MG', 53), (11, 'Botafogo', 53), (12, 'Santos', 47), (13, 'Goiás', 46), (14, 'Bragantino', 44), (15, 'Coritiba', 42), (16, 'Cuiabá', 41), (17, 'Ceará', 37), (18, 'Atlético-GO', 36), (19, 'Avaí', 35), (20, 'Juventude', 22), (21, 'Barcelona', 37), (22,'Real Madrid', 35), (23, 'Real Sociedad', 26), (24, 'Athletic Bilbao', 24), (25, 'Atlético de Madrid', 24), (26, 'Real Betis', 24), (27, 'Osasuna', 23), (28, 'Rayo Vallecano', 22), (29, 'Villareal', 21), (30, 'Valencia', 19), (31, 'Real Mallorca', 19), (32, 'Real Valladolid', 17), (33, 'Girona', 16), (34, 'Almería', 16), (35, 'Getafe', 14), (36, 'Espanyol', 12), (37, 'Celta de Vigo', 12), (38, 'Sevilla', 11), (39, 'Cádiz', 11), (40, 'Elche', 4);
 
+DROP TABLE IF EXISTS tecnicos;
+CREATE TABLE tecnicos (
+id INTEGER NOT NULL UNIQUE,
+nome VARCHAR(20) NOT NULL,
+id_clube INTEGER NOT NULL UNIQUE,
+PRIMARY KEY (id),
+FOREIGN KEY (id_clube) REFERENCES clubes(id)
+);
+INSERT INTO tecnicos VALUES (1, 'Mano Menezes', 1),  (2, 'Abel Ferreira', 2), (3, 'Diniz', 3), (4, 'Vitor Pereira', 4), (5, 'Dorival', 5), (6, 'Felipão', 6), (7, 'Cuca', 7), (8, 'Vojvoda', 8), (9, 'Rogerio Ceni', 9), (10, 'Mancini', 10), (11, '', 11), (12, '', 12), (13, '', 13), (14, '', 14), (15, '', 15), (16, '', 16), (17, '', 17), (18, '', 18), (19, '', 19), (20, '', 20), (21, '', 21), (22, '', 22), (23, '', 23), (24, '', 24), (25, '', 25), (26, '', 26), (27, '', 27), (28, '', 28), (29, '', 29), (30, '', 30), (31, '', 31), (32, '', 32), (33, '', 33), (34, '', 34), (34, '', 34), (35, '', 35), (36, '', 36), (37, '', 37), (38, '', 38), ;
+
 DROP TABLE IF EXISTS escudos;
 CREATE TABLE escudos (
 id_clube INTEGER NOT NULL UNIQUE,
