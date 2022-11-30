@@ -1,0 +1,46 @@
+a {
+    text-decoration: none;
+}
+
+a:link,a:visited {
+    color: black;
+}
+
+.menu {
+    margin: auto;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.item {
+    display: inline;
+    justify-content: flex-start;
+    margin: 20px;
+}
+
+input,button {
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+.textoLogin {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.textoLogin input,button {
+    float: none;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+.show {
+    display: block;
+}
