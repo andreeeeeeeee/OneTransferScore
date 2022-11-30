@@ -10,6 +10,24 @@
 </head>
 
 <body>
+    <div class="menu">
+        <div class="item"><a href="index.php">Início</a></div>
+        <div class="item"><a href="index.php">Jogos</a></div>
+        <div class="item"><a href="index.php">Campeonatos</a></div>
+        <div class="item" onclick="login()">Login</div>
+        <div class="textoLogin" id="login">
+            <input type="text" placeholder="Login">
+            <input type="text" placeholder="Senha">
+            <button>Entrar</button>
+        </div>
+        <input type="text" placeholder="Pesquisar">
+        <button>🔎</button>
+    </div>
+    <!-- notícias aqui em baixo -->
+
+
+
+
     <?php
     $db = new SQLite3("db.db");
     $db->exec("PRAGMA foreign_keys = ON");
@@ -21,6 +39,13 @@
     // }
     $db->close();
     ?>
+
+
+    <script>
+        function login() {
+            document.getElementById("login").classList.toggle("show");
+        }
+    </script>
 </body>
 
 </html>
