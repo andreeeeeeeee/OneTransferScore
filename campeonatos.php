@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,11 +18,27 @@
             <input type="text" placeholder="Login">
             <input type="text" placeholder="Senha">
             <button>Entrar</button>
-        </div>
-        <input type="text" placeholder="Pesquisar">
-        <button>🔎</button>
     </div>
-    <!-- notícias aqui em baixo -->
+    <input type="text" placeholder="Pesquisar">
+    <button>🔎</button>
 
+    <?php
+        $db = new SQLite3("db.db");
+        $db->exec("PRAGMA foreign_keys = ON");
+        $result = $db->query("SELECT img FROM escudos INNER JOIN clubes ON clubes.id = escudos.id_clube");
+        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            foreach ($row as $key => $value) {
+                echo '<img width=100px height=100px src="' . $value . '">';
+            }
+        }
+        $db->close();
+    ?>
+
+    <script>
+        function login() {
+            document.getElementById("login").classList.toggle("show");
+        }
+    </script>
+    </div>
 </body>
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,11 +18,17 @@
             <input type="text" placeholder="Login">
             <input type="text" placeholder="Senha">
             <button>Entrar</button>
-        </div>
-        <input type="text" placeholder="Pesquisar">
-        <button>🔎</button>
     </div>
-    <!-- notícias aqui em baixo -->
+    <input type="text" placeholder="Pesquisar">
+    <button>🔎</button>
 
+    <h1>(Não colocamos os jogos no banco, muito trabalho)</h1>
+
+    <script>
+        function login() {
+            document.getElementById("login").classList.toggle("show");
+        }
+    </script>
+    </div>
 </body>
 </html>
