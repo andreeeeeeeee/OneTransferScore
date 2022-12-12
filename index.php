@@ -38,17 +38,6 @@
         <h2>Não temos mais notícias</h2>
         <span>Após pronunciamento de Tiririca, o mundo do futebol se calou para refletir sobre posicionamento do pensador.</span>
       </div>
-      <!--<?php
-          $db = new SQLite3("db.db");
-          $db->exec("PRAGMA foreign_keys = ON");
-          $result = $db->query("SELECT img FROM escudos INNER JOIN clubes ON clubes.id = escudos.id_clube");
-          while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
-            foreach ($row as $key => $value) {
-              echo '<img src="' . $value . '">';
-            }
-          }
-          $db->close();
-          ?>-->
     </div>
     <!-- notícias aqui em baixo -->
 
