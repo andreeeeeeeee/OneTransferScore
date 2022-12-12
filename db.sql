@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS clubes;
 CREATE TABLE clubes (
-id INTEGER NOT NULL UNIQUE,
-nome VARCHAR(30) NOT NULL UNIQUE,
+id INTEGER NOT NULL,
+nome VARCHAR(30) NOT NULL,
 pontos INTEGER NOT NULL,
 PRIMARY KEY (id)
 );
@@ -9,18 +9,18 @@ INSERT INTO clubes VALUES (1, 'Internacional', 81), (2, 'Palmeiras', 73), (3, 'F
 
 DROP TABLE IF EXISTS tecnicos;
 CREATE TABLE tecnicos (
-id INTEGER NOT NULL UNIQUE,
+id INTEGER NOT NULL,
 nome VARCHAR(20) NOT NULL,
-id_clube INTEGER NOT NULL UNIQUE,
+id_clube INTEGER NOT NULL,
 PRIMARY KEY (id),
 FOREIGN KEY (id_clube) REFERENCES clubes(id)
 );
-INSERT INTO tecnicos VALUES (1, 'Mano Menezes', 1),  (2, 'Abel Ferreira', 2), (3, 'Diniz', 3), (4, 'Vitor Pereira', 4), (5, 'Dorival', 5), (6, 'Felipão', 6), (7, 'Cuca', 7), (8, 'Vojvoda', 8), (9, 'Rogerio Ceni', 9), (10, 'Mancini', 10), (11, '', 11), (12, '', 12), (13, '', 13), (14, '', 14), (15, '', 15), (16, '', 16), (17, '', 17), (18, '', 18), (19, '', 19), (20, '', 20), (21, '', 21), (22, '', 22), (23, '', 23), (24, '', 24), (25, '', 25), (26, '', 26), (27, '', 27), (28, '', 28), (29, '', 29), (30, '', 30), (31, '', 31), (32, '', 32), (33, '', 33), (34, '', 34), (34, '', 34), (35, '', 35), (36, '', 36), (37, '', 37), (38, '', 38), ;
+INSERT INTO tecnicos VALUES (1, 'Mano Menezes', 1),  (2, 'Abel Ferreira', 2), (3, 'Diniz', 3), (4, 'Vitor Pereira', 4), (5, 'Dorival', 5), (6, 'Felipão', 6), (7, 'Cuca', 7), (8, 'Vojvoda', 8), (9, 'Rogerio Ceni', 9), (10, 'Mancini', 10);
 
 DROP TABLE IF EXISTS escudos;
 CREATE TABLE escudos (
-id_clube INTEGER NOT NULL UNIQUE,
-img VARCHAR NOT NULL UNIQUE,
+id_clube INTEGER NOT NULL,
+img VARCHAR NOT NULL,
 PRIMARY KEY(id_clube),
 FOREIGN KEY (id_clube) REFERENCES clubes(id)
 );
@@ -28,24 +28,13 @@ INSERT INTO escudos VALUES (1, './img/escudos/brasileiro/Internacional.svg'), (2
 
 DROP TABLE IF EXISTS campeonato;
 CREATE TABLE campeonato (
-  id INTEGER NOT NULL UNIQUE,
-  nome VARCHAR(30) NOT NULL UNIQUE,
-  img VARCHAR NOT NULL UNIQUE,
+  id INTEGER NOT NULL,
+  nome VARCHAR(30) NOT NULL,
+  img VARCHAR NOT NULL,
   PRIMARY KEY(id)
 );
 INSERT INTO campeonato VALUES (1, 'Brasileirão', './img/brasileirao.png'), (2, 'LaLiga', './img/laliga.png');
 
-DROP TABLE IF EXISTS campeonato_clubes;
-CREATE TABLE campeonato_clubes (
-  id_clube INTEGER NOT NULL,
-  id_campeonato INTEGER NOT NULL,
-  PRIMARY KEY(id_clube, id_campeonato),
-  FOREIGN KEY(id_clube) REFERENCES clubes(id),
-  FOREIGN KEY(id_campeonato) REFERENCES campeonato(id)
-);
-INSERT INTO campeonato_clubes VALUES (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1), (17, 1), (18, 1), (19, 1), (20, 1), (21,2), (22,2), (23,2), (24,2), (25,2), (26,2), (27,2), (28,2), (29,2), (30,2), (30,2), (31,2), (32,2), (33,2), (34,2), (35,2), (36,2), (37,2), (38,2), (39,2), (40,2);
-
 SELECT * FROM campeonato;
 SELECT * FROM clubes;
-SELECT * FROM campeonato_clubes;
 SELECT * FROM escudos;
